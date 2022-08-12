@@ -12,7 +12,4 @@ document.addEventListener('DOMContentLoaded', function () {
     
     })
     
-    
-    
-    
     });
