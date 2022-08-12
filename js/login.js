@@ -7,4 +7,8 @@ document.addEventListener('DOMContentLoaded', function (evento) {
         location.href = "www.yoursite.com";
         // alert('Cliqueaste el botón');
     })
+
+
+
+    
 });
