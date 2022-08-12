@@ -1,14 +1,18 @@
+let URL_INDEX = 'C:\Users\miche\Desktop\JAP\Proyecto Obligatorio\index.html'
 
 
-
-document.addEventListener('DOMContentLoaded', function (evento) {
-    let miBoton = document.getElementById('ingresar');
-    miBoton.addEventListener('click', function (evento) {
-        location.href = "www.yoursite.com";
-        // alert('Cliqueaste el botón');
-    })
-
-
-
+document.addEventListener('DOMContentLoaded', function () {
     
-});
+    let miBoton = document.getElementById('loginform');
+    miBoton.addEventListener('submit', function (event) {
+   
+    // alert('Cliqueaste el botón');
+    event.preventDefault();
+    window.open("C:/Users/miche/Desktop/JAP/Proyecto Obligatorio/index.html", "_self");
+    
+    })
+    
+    
+    
+    
+    });
