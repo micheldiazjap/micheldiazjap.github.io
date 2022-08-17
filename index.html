@@ -18,27 +18,34 @@
 <body>
   <main class="mt-5">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <div id="contenedor">
-          <div id="central">
-            <div id="login">
-              <div class="titulo">
-                Bienvenido
-              </div>
-              <form id="loginform">
+      <div id="contenedor" class="form-group">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">
+              Bienvenido
+            </div>
+            <form id="loginform">
 
-                <input type="mail" name="usuario" id="usuario" placeholder="Email" required>
+              <input type="mail" name="usuario" id="usuario" placeholder="Email" required>
 
-                <input type="password" placeholder="Contraseña" name="password" required>
+              <input type="password" placeholder="Contraseña" name="password" required>
 
-                <button type="submit" title="Ingresar" name="Ingresar" id="ingresar">Ingresar</button>
-              </form>
-              <div class="pie-form">
-                <a href="#">¿No tienes Cuenta? Registrate</a>
-              </div>
+              <button type="submit" title="Ingresar" name="Ingresar" id="ingresar"
+                class="btn btn-primary mb-2">Ingresar</button>
+            </form>
+            <div class="pie-form">
+              <a href="#">¿No tienes Cuenta? Registrate</a>
             </div>
           </div>
         </div>
+        <div id="g_id_onload" data-client_id="627386899527-8lvb5bl5oid593ake3oda12a9pmb2ati.apps.googleusercontent.com"
+          data-login_uri="https://micheldiazjap.github.io" data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin" data-width=200 data-type="standard" data-size="large" data-theme="outline"
+          data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+        </div>
+      </div>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -51,7 +58,7 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
-
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
 
 </html>
