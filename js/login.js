@@ -1,4 +1,4 @@
-let URL_INDEX  = "C:/Users/miche/Desktop/JAP/Proyecto Obligatorio/home.html"
+let URL_INDEX  = "home.html"
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // alert('Cliqueaste el botón');
     event.preventDefault();
+    // window.open("home.html", "_self");
     window.location.href = URL_INDEX
     
     })
