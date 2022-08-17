@@ -46,8 +46,8 @@ let maxCount = undefined;
 function showProductsList() {
 
     let product = currentProductsArray.products
-    console.log(currentProductsArray)
-    console.log(product)
+    // console.log(currentProductsArray)
+    // console.log(product)
 
     let htmlContentToAppend = "";
 
