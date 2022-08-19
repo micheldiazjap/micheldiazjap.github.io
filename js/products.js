@@ -6,6 +6,20 @@ let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            currentProductsArray = resultObj.data
+
+            showProductsList();
+
+            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+        }
+    });
+
+
+});
+
 // function sortProducts(criteria, array){
 //     let result = [];
 //     if (criteria === ORDER_ASC_BY_NAME)
@@ -100,17 +114,4 @@ function showProductsList() {
 
 
 
-document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function (resultObj) {
-        if (resultObj.status === "ok") {
-            currentProductsArray = resultObj.data
-
-            showProductsList();
-
-            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
-        }
-    });
-
-
-});
 
