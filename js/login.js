@@ -12,7 +12,6 @@ function validarNombre(user, cont) {
     else {
         return true;
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -21,19 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         event.preventDefault();
         if (validarNombre(user, cont)) {
-
             window.location.href = URL_INDEX
         }
         else {
-
-            document.getElementById("alert").innerHTML = "debe completar los campos vacios!"
-
+            document.getElementById("alert").innerHTML = "Debe completar los campos vacios!"
             // alert("debeingresar los campos")
         }
-
-
     })
-
 });
 
 function handleCredentialResponse(response) {
