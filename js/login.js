@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
-    const responsePayload = decodeJwtResponse(response.credential);
+    const responsePayload = jwt_decode(response.credential);
 
     console.log("ID: " + responsePayload.sub);
     console.log('Full Name: ' + responsePayload.name);
