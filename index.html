@@ -54,10 +54,6 @@
   </footer>
   <script src="js/login.js"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script type="module"> import jwtDecode from 'esm.run/jwt-decode'; function handleCredentialResponse(response) { const responsePayLoad = jwtDecode(response.credential); console.log("ID: " + responsePayLoad.sub); console.log('Full Name: ' + responsePayLoad.name); console.log('Given Name: ' + responsePayLoad.given_name); console.log('Family Name: ' + responsePayLoad.family_name); console.log("Image URL: " + responsePayLoad.picture); console.log("Email: " + responsePayLoad.email); alert(responsePayLoad.email); } </script>
-  <script>
-
-  </script>
 </body>
 
 </html>
