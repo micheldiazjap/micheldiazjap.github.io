@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         if (validarNombre(user, cont)) {
             window.location.href = URL_INDEX
+            localStorage.setItem('usuario',user.value);
         }
         else {
             document.getElementById("alert").innerHTML = "Debe completar los campos vacios!"
