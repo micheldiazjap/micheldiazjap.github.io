@@ -32,28 +32,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-    const responsePayload = decodeJwtResponse(response.credential);
+// function handleCredentialResponse(response) {
+//     console.log("Encoded JWT ID token: " + response.credential);
+//     const responsePayload = decodeJwtResponse(response.credential);
 
-    console.log("ID: " + responsePayload.sub);
-    console.log('Full Name: ' + responsePayload.name);
-    console.log('Given Name: ' + responsePayload.given_name);
-    console.log('Family Name: ' + responsePayload.family_name);
-    console.log("Image URL: " + responsePayload.picture);
-    console.log("Email: " + responsePayload.email);
+//     console.log("ID: " + responsePayload.sub);
+//     console.log('Full Name: ' + responsePayload.name);
+//     console.log('Given Name: ' + responsePayload.given_name);
+//     console.log('Family Name: ' + responsePayload.family_name);
+//     console.log("Image URL: " + responsePayload.picture);
+//     console.log("Email: " + responsePayload.email);
 
 
-}
+// }
 
-window.onload = function () {
-    google.accounts.id.initialize({
-        client_id: "627386899527-8lvb5bl5oid593ake3oda12a9pmb2ati.apps.googleusercontent.com",
-        callback: handleCredentialResponse
-    });
-    google.accounts.id.renderButton(
-        document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large" }  // customization attributes
-    );
-    google.accounts.id.prompt(); // also display the One Tap dialog
-}
+// window.onload = function () {
+//     google.accounts.id.initialize({
+//         client_id: "627386899527-8lvb5bl5oid593ake3oda12a9pmb2ati.apps.googleusercontent.com",
+//         callback: handleCredentialResponse
+//     });
+//     google.accounts.id.renderButton(
+//         document.getElementById("buttonDiv"),
+//         { theme: "outline", size: "large" }  // customization attributes
+//     );
+//     google.accounts.id.prompt(); // also display the One Tap dialog
+// }
