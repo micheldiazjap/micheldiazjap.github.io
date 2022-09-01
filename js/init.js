@@ -44,6 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let usuario = localStorage.getItem('usuario');
 
+  if(usuario === null){
+
+    window.location.href="login.html"
+  }
+
   document.getElementById("usuario").innerHTML=usuario
 
 });

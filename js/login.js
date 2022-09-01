@@ -1,4 +1,4 @@
-const URL_INDEX = "home.html"
+const URL_INDEX = "index.html"
 const user = document.getElementById("usuario")
 const cont = document.getElementById("pass")
 const Form = document.getElementById('loginform');
@@ -20,12 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         event.preventDefault();
         if (validarNombre(user, cont)) {
-            window.location.href = URL_INDEX
             localStorage.setItem('usuario',user.value);
+            window.location.href = URL_INDEX
+           
         }
         else {
             document.getElementById("alert").innerHTML = "Debe completar los campos vacios!"
-            // alert("debeingresar los campos")
+            
         }
     })
 });
