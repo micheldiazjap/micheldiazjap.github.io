@@ -13,17 +13,4 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-    
-//     if (localStorage.getItem("visited")) {
-//         window.location.href = "C:/Users/miche/Desktop/JAP/Proyecto Obligatorio/login.html";
-//     }
-//     localStorage.setItem("visited", "true");
-
-  
-    
-    
-//     })
     
