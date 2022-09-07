@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         event.preventDefault();
         if (validarNombre(user, cont)) {
+
+            //guarda el usuario en localStorage
             localStorage.setItem('usuario',user.value);
             window.location.href = URL_INDEX
            

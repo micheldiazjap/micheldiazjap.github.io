@@ -10,7 +10,7 @@ var idProd = localStorage.getItem("catID");
 let ProdURL = "https://japceibal.github.io/emercado-api/cats_products/" + idProd + ".json"
 
 
-
+//acomoda los productos en orden ascendente, descendete y por costo
 function sortProducts(criteria, array) {
     let result = [];
     if (criteria === ORDER_ASC_BY_PRICE) {
@@ -39,7 +39,7 @@ function sortProducts(criteria, array) {
     return result;
 }
 
-
+//muestra la lista de los productos
 function showProductsList() {
 
     let product = currentProductsArray.products
@@ -56,7 +56,7 @@ function showProductsList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(prod.cost) <= maxCount))) {
 
             htmlContentToAppend += `
-            <div id="setProdID(${prod.id})" class="list-group-item list-group-item-action cursor-active">
+            <div id="${prod.id}" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="${prod.image}" alt="${prod.description}" class="img-thumbnail">
@@ -77,7 +77,7 @@ function showProductsList() {
     }
 }
 
-
+//Muestro los productos ordenados
 function sortAndShowProducts(sortCriteria, ProductsArray) {
     currentSortCriteria = sortCriteria;
 
@@ -87,19 +87,18 @@ function sortAndShowProducts(sortCriteria, ProductsArray) {
 
     currentProductsArray.products = sortProducts(currentSortCriteria, currentProductsArray.products);
 
-    //Muestro los productos ordenados
+
     showProductsList();
 }
 
 
 
-
+//ejecuta las funciones cuando sucede un evento
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(ProdURL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             currentProductsArray = resultObj.data
             showProductsList();
-            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
 

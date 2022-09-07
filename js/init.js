@@ -40,15 +40,16 @@ let getJSONData = function (url) {
     });
 }
 
+//redirecciona si no hay usuario logueado y si existe lo coloca en el html
 document.addEventListener('DOMContentLoaded', function () {
 
   let usuario = localStorage.getItem('usuario');
 
-  if(usuario === null){
+  if (usuario === null) {
 
-    window.location.href="login.html"
+    window.location.href = "login.html"
   }
 
-  document.getElementById("usuario").innerHTML=usuario
+  document.getElementById("usuario").innerHTML = usuario
 
 });
