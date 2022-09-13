@@ -35,10 +35,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 </div>
             </div>
             `
-
             document.getElementById("container").innerHTML = htmlContentToAppend;
-
-
 
         }
 
@@ -65,9 +62,29 @@ document.addEventListener("DOMContentLoaded", function (e) {
                    </div>`
 
             }
-            
 
-            
+            //agrega comentario nuevo
+            document.addEventListener("submit", function(e){
+                e.preventDefault()
+                 var puntaje = document.getElementById("punt").value;
+                 var comentario = document.getElementById("coment").value;
+                 var com=""
+
+                 com+=`          
+                                <div class="list-group-item list-group-item-action">
+                                    <p> ${comentario}</p>                    
+                `
+                for(let i=0;i<puntaje;i++){
+
+                    com+= `<span class="fa fa-star checked"></span>`
+                }
+
+                   com+= `<br></br><small class="text-muted">Fecha:${Date()}</small>
+                   <div id="nuevoCom"></div>
+                   </div>`
+
+                   document.getElementById("nuevoCom").innerHTML = com;
+            });
             
 
             //console.log(comentarios)
