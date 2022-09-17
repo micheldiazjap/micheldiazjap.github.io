@@ -14,24 +14,24 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             htmlContentToAppend =
                 `
-            <div id="${infoArray.id}" class="list-group-item list-group-item-action">
-                <div class="row">
-                    
+            <div id="${infoArray.id}" class="list-group-item ">
+                <div class="row"> 
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">Producto: ${infoArray.name} $${infoArray.cost}</h4>
-                            <small class="text-muted">${infoArray.soldCount} artículos vendidos</small>
+                            <h3 class="mb-1">${infoArray.name} </h3>
                         </div>
-                        <p class="mb-1" >Categoria: ${infoArray.category}</p>
+                        <h4 class="mb-1">Precio: $${infoArray.cost}</h4>
+                        <p class="mb-1">Categoria: ${infoArray.category}</p>
                         <p class="mb-1">Descripcion: ${infoArray.description}</p>
+                        <p class="mb-1">Cantidad de vendidos: ${infoArray.soldCount} unidades</p>
                     </div>
                     
                 </div>
                 <div class="col-2 d-flex">
-                         <img src="${infoArray.images[0]}"  class="img-thumbnail"> 
+                         <img src="${infoArray.images[0]}" class="img-thumbnail"> 
                          <img src="${infoArray.images[1]}" class="img-thumbnail">
-                         <img src="${infoArray.images[2]}"  class="img-thumbnail">
-                         <img src="${infoArray.images[3]}"  class="img-thumbnail">
+                         <img src="${infoArray.images[2]}" class="img-thumbnail">
+                         <img src="${infoArray.images[3]}" class="img-thumbnail">
                 </div>
             </div>
             `
@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
                 comentarios += `
                                  
-                                <div class="list-group-item list-group-item-action">
+                                <div class="list-group-item">
+                                    <p> ${com.user}</p> 
                                     <p> ${com.description}</p>                    
                 `
                 for(let i=0;i<com.score;i++){
