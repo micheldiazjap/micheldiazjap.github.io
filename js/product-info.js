@@ -6,11 +6,16 @@ let infoArray = []
 
 
 //console.log(infoProd)
+function setRelaID(id) {
+    localStorage.setItem("infoID", id);
+    window.location = "product-info.html"
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
+
     getJSONData(prodInfoURL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             infoArray = resultObj.data
-
 
             htmlContentToAppend =
                 `
@@ -40,10 +45,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
 
     });
+
     getJSONData(comProdURL).then(function (data) {
         if (data.status === "ok") {
             comeArray = data.data
-             console.log(comeArray)
+             //console.log(comeArray)
              let comentarios=""
 
              for (let com of comeArray){
@@ -96,5 +102,42 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
 
     });
+
+    
+    
+
+    getJSONData(prodInfoURL).then(function (data) {
+        
+        if (data.status === "ok") {
+            let relaArray = data.data.relatedProducts
+             console.log(relaArray)
+             
+           
+             htmlContentToAppend =
+             `
+             <div class="card-group w-50">
+             <div class="card h-100 cursor-active" onclick="setRelaID(${relaArray[0].id})" id="${relaArray[0].id}">
+               <img src=${relaArray[0].image} class="card-img-top">
+               <div class="card-body">
+                 <h3 class="card-title">${relaArray[0].name}</h3>
+               </div>
+             </div>
+             <div class="card h-100 cursor-active" onclick="setRelaID(${relaArray[1].id})" id="${relaArray[1].id}">
+               <img src=${relaArray[1].image} class="card-img-top">
+               <div class="card-body">
+                 <h3 class="card-title">${relaArray[1].name}</h3>
+               </div>
+             </div>
+            </div>
+
+             `
+             
+            document.getElementById("relacionados").innerHTML = htmlContentToAppend;
+
+             
+        }
+
+     });
+    
     
 });
