@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
            
              htmlContentToAppend =
              `
+             <h3>Productos relacionados:</h3>
              <div class="card-group w-50">
              <div class="card h-100 cursor-active" onclick="setRelaID(${relaArray[0].id})" id="${relaArray[0].id}">
                <img src=${relaArray[0].image} class="card-img-top">

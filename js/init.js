@@ -52,4 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById("usuario").innerHTML = usuario
 
+    
+  let botDesc = document.getElementById("desconectar");
+  botDesc.addEventListener("click",function(){
+  localStorage.clear("usuario");
+  window.location.href = "login.html"
+  });
+
 });
