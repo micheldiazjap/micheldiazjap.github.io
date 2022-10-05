@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 <div class="row"> 
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h3 class="mb-1">${infoArray.name} </h3>
+                            <h3 class="mb-1">${infoArray.name} </h3> <button id="comprar">Comprar</button>
                         </div>
                         <h4 class="mb-1">Precio: $${infoArray.cost}</h4>
                         <p class="mb-1">Categoria: ${infoArray.category}</p>
@@ -41,7 +41,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
             `
             document.getElementById("container").innerHTML = htmlContentToAppend;
+            
 
+            
+            let botComprar = document.getElementById("comprar");
+            botComprar.addEventListener("click", function () {
+                
+                let carritoLista = [];
+
+                if (localStorage.getItem("cartID") != null) {
+                    carritoLista = JSON.parse(localStorage.getItem('cartID')
+                    )
+                };
+                
+                carritoLista.push(infoArray.id);
+                localStorage.setItem("cartID",JSON.stringify(carritoLista) );
+                window.location = "cart.html"
+
+
+            });
         }
 
     });
@@ -49,10 +67,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(comProdURL).then(function (data) {
         if (data.status === "ok") {
             comeArray = data.data
-             //console.log(comeArray)
-             let comentarios=""
+            //console.log(comeArray)
+            let comentarios = ""
 
-             for (let com of comeArray){
+            for (let com of comeArray) {
 
                 comentarios += `
                                  
@@ -60,39 +78,39 @@ document.addEventListener("DOMContentLoaded", function (e) {
                                     <p> ${com.user}</p> 
                                     <p> ${com.description}</p>                    
                 `
-                for(let i=0;i<com.score;i++){
+                for (let i = 0; i < com.score; i++) {
 
-                    comentarios+= `<span class="fa fa-star checked"></span>`
+                    comentarios += `<span class="fa fa-star checked"></span>`
                 }
 
-                   comentarios+= `<br></br><small class="text-muted">Fecha: ${com.dateTime}</small>
+                comentarios += `<br></br><small class="text-muted">Fecha: ${com.dateTime}</small>
                    </div>`
 
             }
 
             //agrega comentario nuevo
-            document.addEventListener("submit", function(e){
+            document.addEventListener("submit", function (e) {
                 e.preventDefault()
-                 var puntaje = document.getElementById("punt").value;
-                 var comentario = document.getElementById("coment").value;
-                 var com=""
+                var puntaje = document.getElementById("punt").value;
+                var comentario = document.getElementById("coment").value;
+                var com = ""
 
-                 com+=`          
+                com += `          
                                 <div class="list-group-item list-group-item-action">
                                     <p> ${comentario}</p>                    
                 `
-                for(let i=0;i<puntaje;i++){
+                for (let i = 0; i < puntaje; i++) {
 
-                    com+= `<span class="fa fa-star checked"></span>`
+                    com += `<span class="fa fa-star checked"></span>`
                 }
 
-                   com+= `<br></br><small class="text-muted">Fecha:${Date()}</small>
+                com += `<br></br><small class="text-muted">Fecha:${Date()}</small>
                    <div id="nuevoCom"></div>
                    </div>`
 
-                   document.getElementById("nuevoCom").innerHTML = com;
+                document.getElementById("nuevoCom").innerHTML = com;
             });
-            
+
 
             //console.log(comentarios)
             document.getElementById("comentarios").innerHTML = comentarios;
@@ -103,18 +121,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     });
 
-    
-    
+
+
 
     getJSONData(prodInfoURL).then(function (data) {
-        
+
         if (data.status === "ok") {
             let relaArray = data.data.relatedProducts
-             console.log(relaArray)
-             
-           
-             htmlContentToAppend =
-             `
+            console.log(relaArray)
+
+
+            htmlContentToAppend =
+                `
              <h3>Productos relacionados:</h3>
              <div class="card-group w-50">
              <div class="card h-100 cursor-active" onclick="setRelaID(${relaArray[0].id})" id="${relaArray[0].id}">
@@ -132,13 +150,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
 
              `
-             
+
             document.getElementById("relacionados").innerHTML = htmlContentToAppend;
 
-             
+
         }
 
-     });
-    
-    
+    });
+
+
 });
