@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
@@ -49,24 +51,105 @@
     <div class="container" id="contenedor2"></div>
     <br>
     <hr>
-    <form action="" id="formEnvio" class="container">
+    <form action="submit" id="formEnvio" class="container">
       <h3>Tipo de envio:</h3>
-       <ul><input type="radio" name="envio"> Premium 2 a 4 dias (15%)</input></ul>
-       <ul><input type="radio" name="envio"> Express 5 a 8 dias(7%)</input></ul>
-       <ul><input type="radio" name="envio"> Standar 12 a 15 dias(%5)</input></ul>
+      <ul><input type="radio" name="envio" id="premium" checked> Premium 2 a 4 dias (15%)</input></ul>
+      <ul><input type="radio" name="envio" id="express"> Express 5 a 8 dias(7%)</input></ul>
+      <ul><input type="radio" name="envio" id="standar"> Standar 12 a 15 dias(%5)</input></ul>
       <h3>Direccion de envio:</h3>
-       <ul>
-        <label for="">Calle:</label>
-        <input type="text"></input>
-      </ul>
-       <ul>
-        <label for="">Numero:</label>
-        <input type="text"></input>
-      </ul>
-       <ul>
-        <label for="">Esquina:</label>
-        <input type="text"></input>
-      </ul>
+      <div class="container">
+        <ul>
+          <label for="">Calle:</label>
+          <input type="text" required></input>
+        </ul>
+        <ul>
+          <label for="">Numero:</label>
+          <input type="text" required></input>
+        </ul>
+        <ul>
+          <label for="">Esquina:</label>
+          <input type="text" required></input>
+        </ul>
+      </div>
+      <hr>
+      <br>
+      <br>
+      <div id="costos">
+        <h3>Costos</h3>
+        <div class="list-group-item ">
+          <div class="row">
+            <div class="d-flex w-100 justify-content-between">
+              <h4 class="mb-1">Subtotal:</h4>
+              <p id="subtotal"></p>
+            </div>
+            <p class="mb-1 text-muted">Costo unitario del producto por cantidad</p>
+            <hr>
+            <div class="d-flex w-100 justify-content-between">
+              <h4 class="mb-1">Costo de envio:</h4>
+              <p id="costoEnvio">USD:</p>
+            </div>
+            <p class="mb-1 text-muted">Segun el tipo de envio</p>
+            <hr>
+            <div class="d-flex w-100 justify-content-between">
+              <h4 class="mb-1">Total:</h4>
+              <p id="total">USD:</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <br>
+      <div id="formaPago">
+        <h3> Forma de pago: </h3>
+        <div id="alertaPago"></div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Elegir forma de pago
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Forma de pago:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <input type="radio" name="pago" id="tarjetaCredito">Tarjeta de credito
+                <hr>
+                Numero de tarjeta:
+                <input type="text" id="numTarjeta">
+                <br>
+                <br>
+                Codigo de Seg.
+                <input type="text" id="codSeg">
+                <br>
+                <br>
+                vencimiento (MM/AA)
+                <input type="text" id="venc">
+                <br>
+                <br>
+                <input type="radio" name="pago" id="transBancaria">Transferencia Bancaria
+                <hr>
+                Numero de cuenta
+                <input type="text" id="numeCuenta">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div>
+        <button type="submit" id="confirmarCompra" class="btn btn-primary btn-block">Confirmar compra</button>
+      </div>
     </form>
   </main>
   <footer class="text-muted">
