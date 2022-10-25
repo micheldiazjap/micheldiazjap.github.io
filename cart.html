@@ -60,15 +60,18 @@
       <div class="container">
         <ul>
           <label for="">Calle:</label>
-          <input type="text" required></input>
+          <input type="text" id="calle"></input>
+          <div id="alertaCalle"></div>
         </ul>
         <ul>
           <label for="">Numero:</label>
-          <input type="text" required></input>
+          <input type="number" id="numero"></input>
+          <div id="alertaNumero"></div>
         </ul>
         <ul>
           <label for="">Esquina:</label>
-          <input type="text" required></input>
+          <input type="text" id="esquina"></input>
+          <div id="alertaEsquina"></div>
         </ul>
       </div>
       <hr>
@@ -119,23 +122,24 @@
               </div>
               <div class="modal-body">
                 <input type="radio" name="pago" id="tarjetaCredito">Tarjeta de credito
-                <hr>
+                <hr> 
+                <!-- <input type="number" id="costo" min="1" onkeypress="return event.charCode >= 48" pattern="^[1-9]\d*$" value=1></input> -->
                 Numero de tarjeta:
-                <input type="text" id="numTarjeta">
+                <input type="number" id="numTarjeta" placeholder="xxxx-xxxx-xxxx-xxxx">
                 <br>
                 <br>
                 Codigo de Seg.
-                <input type="text" id="codSeg">
+                <input type="number" id="codSeg" placeholder="ej:123">
                 <br>
                 <br>
                 vencimiento (MM/AA)
-                <input type="text" id="venc">
+                <input type="month" id="venc">
                 <br>
                 <br>
                 <input type="radio" name="pago" id="transBancaria">Transferencia Bancaria
                 <hr>
                 Numero de cuenta
-                <input type="text" id="numeCuenta">
+                <input type="number" id="numeCuenta">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
