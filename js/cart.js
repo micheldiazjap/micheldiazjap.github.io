@@ -122,24 +122,27 @@ fetch(CARRITO_URL)
 
 
                 document.getElementById("formEnvio").addEventListener("submit", function (e) {
-                        e.preventDefault();
+                        
 
                         let calle = document.getElementById("calle");
                         let numero = document.getElementById("numero");
                         let esquina = document.getElementById("esquina");
                         if (calle.value === "") {
+                                e.preventDefault();
                                 document.getElementById("alertaCalle").innerHTML = `<p class="text-danger">El campo calle debe estar completo!</p>`
                         }
                         else {
                                 document.getElementById("alertaCalle").innerHTML = ``
                         }
                         if (numero.value === "") {
+                                e.preventDefault();
                                 document.getElementById("alertaNumero").innerHTML = `<p class="text-danger">El campo numero debe estar completo!</p>`
                         }
                         else {
                                 document.getElementById("alertaNumero").innerHTML = ``
                         }
                         if (esquina.value === "") {
+                                e.preventDefault();
                                 document.getElementById("alertaEsquina").innerHTML = `<p class="text-danger">El campo esquina debe estar completo!</p>`
                         }
                         else {
@@ -159,16 +162,20 @@ fetch(CARRITO_URL)
 
 
                         if (!pagoTarjeta.checked && !pagoBancario.checked) {
+                                e.preventDefault();
                                 document.getElementById("alertaPago").innerHTML = `<p class="text-danger">Debe seleccionar una forma de pago!</p>`
                         }
                         else {
+                                e.preventDefault();
                                 document.getElementById("alertaPago").innerHTML = `<p class="text-success">HAS COMPRADO CON EXITO!</p>`
                         }
 
                         if (numCuenta.value === "" && pagoBancario.checked) {
+                                e.preventDefault();
                                 document.getElementById("alertaPago").innerHTML = `<p class="text-danger">Debe completar los datos de pago!</p>`
                         }
                         else if ((numtarjeta.value === "" || codSeg.value === "" || venc.value === "") && pagoTarjeta.checked) {
+                                e.preventDefault();
                                 document.getElementById("alertaPago").innerHTML = `<p class="text-danger">Debe completar los datos de pago!</p>`
                         }
 
