@@ -41,21 +41,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
             `
             document.getElementById("container").innerHTML = htmlContentToAppend;
-            
 
-            
             let botComprar = document.getElementById("comprar");
             botComprar.addEventListener("click", function () {
-                
+
                 let carritoLista = [];
 
                 if (localStorage.getItem("cartID") != null) {
                     carritoLista = JSON.parse(localStorage.getItem('cartID')
                     )
                 };
-                
+
                 carritoLista.push(infoArray.id);
-                localStorage.setItem("cartID",JSON.stringify(carritoLista) );
+                localStorage.setItem("cartID", JSON.stringify(carritoLista));
                 window.location = "cart.html"
 
 
@@ -111,17 +109,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 document.getElementById("nuevoCom").innerHTML = com;
             });
 
-
             //console.log(comentarios)
             document.getElementById("comentarios").innerHTML = comentarios;
-
-
-
         }
 
     });
-
-
 
 
     getJSONData(prodInfoURL).then(function (data) {
@@ -129,8 +121,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (data.status === "ok") {
             let relaArray = data.data.relatedProducts
             console.log(relaArray)
-
-
             htmlContentToAppend =
                 `
              <h3>Productos relacionados:</h3>
