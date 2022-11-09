@@ -66,7 +66,5 @@ document.addEventListener('DOMContentLoaded', function () {
             arrayDatos.splice(5, 0, document.getElementById("telefono").value)
         }
         localStorage.setItem('ArrayDatos', JSON.stringify(arrayDatos));
-        console.log(arrayDatos)
-        
     })
 });
