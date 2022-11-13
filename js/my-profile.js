@@ -1,6 +1,24 @@
+
 document.addEventListener('DOMContentLoaded', function () {
 
+
     document.getElementById("email").value = localStorage.getItem('usuario');
+    let imagenReciente = localStorage.getItem("imagenReciente")
+    if (imagenReciente) {
+        document.querySelector("img").setAttribute("src", imagenReciente)
+    }
+
+    let foto = document.getElementById("foto");
+
+    foto.addEventListener("change", function () {
+        const lector = new FileReader();
+        lector.addEventListener("load", () => {
+            localStorage.setItem("imagenReciente", lector.result);
+
+        })
+        lector.readAsDataURL(this.files[0]);
+
+    })
 
     let botonGuardar = document.getElementById("guardar")
 
@@ -27,44 +45,37 @@ document.addEventListener('DOMContentLoaded', function () {
         let segundoApellido = document.getElementById("segundoApellido").value
         let email = document.getElementById("email").value
         let telefono = document.getElementById("telefono").value
-
+        let alerta = document.getElementById("alerta");
+        let imagenReciente = localStorage.getItem("imagenReciente")
+        if (imagenReciente) {
+            document.querySelector("img").setAttribute("src", imagenReciente)
+        }
         if (nombre != "") {
 
             arrayDatos.splice(0, 0, document.getElementById("nombre").value)
         }
         else {
-            arrayDatos.splice(0, 0, document.getElementById("nombre").value)
+            alerta.innerHTML = `<p class="text-danger">Debe completar los datos marcados!</p>`
         }
         if (apellido != "") {
             arrayDatos.splice(1, 0, document.getElementById("apellido").value)
         }
         else {
-            arrayDatos.splice(1, 0, document.getElementById("apellido").value)
-        }
-        if (segundoNombre != "") {
-            arrayDatos.splice(2, 0, document.getElementById("segundoNombre").value)
-        }
-        else {
-            arrayDatos.splice(2, 0, document.getElementById("segundoNombre").value)
-        }
-        if (segundoApellido != "") {
-            arrayDatos.splice(3, 0, document.getElementById("segundoApellido").value)
-        }
-        else {
-            arrayDatos.splice(3, 0, document.getElementById("segundoApellido").value)
+            alerta.innerHTML = `<p class="text-danger">Debe completar los datos marcados!</p>`
         }
         if (email != "") {
             arrayDatos.splice(4, 0, document.getElementById("email").value)
         }
         else {
-            arrayDatos.splice(4, 0, document.getElementById("email").value)
+            alerta.innerHTML = `<p class="text-danger">Debe completar los datos marcados!</p>`
         }
-        if (telefono != "") {
-            arrayDatos.splice(5, 0, document.getElementById("telefono").value)
-        }
-        else {
-            arrayDatos.splice(5, 0, document.getElementById("telefono").value)
-        }
+
+        arrayDatos.splice(2, 0, segundoNombre)
+
+        arrayDatos.splice(3, 0, segundoApellido)
+
+        arrayDatos.splice(5, 0, telefono)
+
         localStorage.setItem('ArrayDatos', JSON.stringify(arrayDatos));
     })
 });

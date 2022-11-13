@@ -61,34 +61,45 @@
   </nav>
   <main>
     <div class="container">
-      <div class="d-flex w-100">
-        <h3>Perfil</h3>
+      <br>
+      <div class="row align-items-start">
+        <h3 class="col">Perfil</h3>
+        
+
       </div>
-      <br>
-      <br>
-      <hr>
-      <form action="">
-        <div class="row align-items-start">
-          <div class="col">
-            Primer Nombre:
-            <li><input type="text" id="nombre" required></li>
-            Primer Apellido:
-            <li><input type="text" id="apellido" required></li>
-            Email:
-            <li><input type="email" id="email" required></li>
-          </div>
-          <div class="col">
-            Segundo Nombre:
-            <li><input type="text" id="segundoNombre"></li>
-            Segundo Apellido:
-            <li><input type="text" id="segundoApellido"></li>
-            Telefono de contacto:
-            <li><input type="number" id="telefono"></li>
-          </div>
+    
+
+    <div id="alerta"></div>
+    <br>
+    <br>
+    <hr>
+    <form action="">
+      <div class="row align-items-start">
+        <div class="col">
+          Primer Nombre*:
+          <li><input type="text" id="nombre" required></li>
+          Primer Apellido*:
+          <li><input type="text" id="apellido" required></li>
+          Email*:
+          <li><input type="email" id="email" required></li>
         </div>
-        <hr>
-        <Button type="submit" class="btn btn-primary" id="guardar">Guardar Datos</Button>
-      </form>
+        <div class="col">
+          Segundo Nombre:
+          <li><input type="text" id="segundoNombre"></li>
+          Segundo Apellido:
+          <li><input type="text" id="segundoApellido"></li>
+          Telefono de contacto:
+          <li><input type="number" id="telefono"></li>
+        </div>
+        <div class="col">
+          <img src="img/img_perfil.png" class="w-25" alt="Preview">
+          <hr>
+          <div><input id="foto" type="file"></div>
+        </div>
+      </div>
+      <hr>
+      <Button type="submit" class="btn btn-primary" id="guardar">Guardar Datos</Button>
+    </form>
 
 
     </div>
