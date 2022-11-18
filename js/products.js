@@ -7,7 +7,7 @@ let minCount = undefined;
 let maxCount = undefined;
 
 var idProd = localStorage.getItem("catID");
-let ProdURL = "https://japceibal.github.io/emercado-api/cats_products/" + idProd + ".json"
+let ProdURL = PRODUCTS_URL + idProd + ".json"
 
 
 //acomoda los productos en orden ascendente, descendete y por costo

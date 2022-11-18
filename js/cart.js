@@ -1,4 +1,4 @@
-const CARRITO_URL = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
+const CARRITO_URL = CART_INFO_URL+"25801.json"
 
 fetch(CARRITO_URL)
         .then(response => response.json())

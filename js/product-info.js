@@ -1,7 +1,7 @@
 
 let infoProd = localStorage.getItem("infoID");
-let prodInfoURL = "https://japceibal.github.io/emercado-api/products/" + infoProd + ".json"
-let comProdURL = "https://japceibal.github.io/emercado-api/products_comments/" + infoProd + ".json"
+let prodInfoURL = PRODUCT_INFO_URL + infoProd + ".json"
+let comProdURL = PRODUCT_INFO_COMMENTS_URL + infoProd + ".json"
 let infoArray = []
 
 
