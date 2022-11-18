@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     document.getElementById("email").value = localStorage.getItem('usuario');
+
+    //guardar foto de perfil
     let imagenReciente = localStorage.getItem("imagenReciente")
     if (imagenReciente) {
         document.querySelector("img").setAttribute("src", imagenReciente)
@@ -17,11 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         })
         lector.readAsDataURL(this.files[0]);
-
     })
 
     let botonGuardar = document.getElementById("guardar")
 
+    //carga lo guardado en localstorage
     if (localStorage.getItem("ArrayDatos") != null) {
 
         let arrayParacargar = JSON.parse(localStorage.getItem('ArrayDatos'))
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let telefono = document.getElementById("telefono").value
         let alerta = document.getElementById("alerta");
         let imagenReciente = localStorage.getItem("imagenReciente")
+
         if (imagenReciente) {
             document.querySelector("img").setAttribute("src", imagenReciente)
         }
