@@ -7,8 +7,7 @@ let minCount = undefined;
 let maxCount = undefined;
 
 var idProd = localStorage.getItem("catID");
-let ProdURL = PRODUCTS_URL + idProd + ".json"
-
+let ProdURL = PRODUCTS_URL + idProd 
 
 //acomoda los productos en orden ascendente, descendete y por costo
 function sortProducts(criteria, array) {

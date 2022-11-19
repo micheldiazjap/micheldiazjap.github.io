@@ -1,7 +1,7 @@
 
 let infoProd = localStorage.getItem("infoID");
-let prodInfoURL = PRODUCT_INFO_URL + infoProd + ".json"
-let comProdURL = PRODUCT_INFO_COMMENTS_URL + infoProd + ".json"
+let prodInfoURL = PRODUCT_INFO_URL + infoProd 
+let comProdURL = PRODUCT_INFO_COMMENTS_URL + infoProd
 let infoArray = []
 
 

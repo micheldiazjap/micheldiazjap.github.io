@@ -1,6 +1,6 @@
-const CARRITO_URL = CART_INFO_URL+"25801.json"
 
-fetch(CARRITO_URL)
+
+fetch(CART_INFO_URL)
         .then(response => response.json())
         .then(datos => {
 
